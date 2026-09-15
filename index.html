@@ -603,31 +603,35 @@
     .card .le-qty-count{font-size:1rem !important;}
   }
   @media (max-width: 480px){
-    .brand-acc-grid{grid-template-columns:1fr; gap:12px; padding:12px;}
-    .card{padding:16px 16px 14px;}
-    .card-top{margin-bottom:8px;}
-    .card-house{font-size:0.7rem;}
-    .wish-btn{font-size:1.3rem;}
-    .card-body{gap:14px; margin-bottom:10px;}
-    .vial-slot{width:76px; height:132px;}
-    .vial{width:76px;}
+    .brand-acc-grid{grid-template-columns:repeat(2, 1fr); gap:10px; padding:10px;}
+    .card{padding:12px 10px 10px;}
+    .card-top{margin-bottom:6px;}
+    .card-house{font-size:0.6rem;}
+    .wish-btn{font-size:1.15rem;}
+    .card-body{flex-direction:column; align-items:center; gap:8px; margin-bottom:8px;}
+    .vial-slot{width:64px; height:112px;}
+    .vial{width:64px;}
     .card-name{
-      font-size:1.2rem; line-height:1.25; margin:0 0 4px;
+      font-size:0.95rem; line-height:1.25; margin:0 0 3px;
       min-height:0;
       display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
     }
-    .notes{font-size:0.85rem; line-height:1.5;}
-    .notes div{white-space:normal;}
-    .card-dupe{font-size:0.74rem; height:16px; line-height:16px;}
-    .card-fragrantica{font-size:0.78rem; margin-top:8px;}
-    .size-table{padding-top:10px;}
-    .size-table-row{flex-wrap:wrap; row-gap:8px; padding:10px 2px; font-size:0.9rem;}
+    .notes{font-size:0.68rem; line-height:1.4; width:100%;}
+    .notes div{
+      white-space:normal;
+      display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+      text-overflow:ellipsis; margin-bottom:2px;
+    }
+    .card-dupe{font-size:0.66rem; height:auto; white-space:normal; line-height:1.3;}
+    .card-fragrantica{font-size:0.68rem; margin-top:6px;}
+    .size-table{padding-top:8px;}
+    .size-table-row{flex-wrap:wrap; row-gap:6px; padding:8px 2px; font-size:0.78rem;}
     .size-table-right{width:100%; justify-content:space-between;}
-    .size-table-price{font-size:0.95rem; min-width:0;}
-    .card .le-qty-add{padding:8px 16px !important; font-size:0.85rem !important;}
-    .card .le-qty-stepper{gap:8px !important;}
-    .card .le-qty-btn{width:26px !important; height:26px !important; font-size:0.9rem !important;}
-    .card .le-qty-count{font-size:0.9rem !important; min-width:16px !important;}
+    .size-table-price{font-size:0.82rem; min-width:0;}
+    .card .le-qty-add{padding:6px 10px !important; font-size:0.72rem !important;}
+    .card .le-qty-stepper{gap:6px !important;}
+    .card .le-qty-btn{width:22px !important; height:22px !important; font-size:0.8rem !important;}
+    .card .le-qty-count{font-size:0.78rem !important; min-width:14px !important;}
   }  .wa-float{
     position:fixed; bottom:24px; right:24px; z-index:50;
     width:56px; height:56px; border-radius:50%;
