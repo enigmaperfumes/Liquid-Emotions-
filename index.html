@@ -605,7 +605,16 @@
   @media (max-width: 480px){
     .brand-acc-grid{grid-template-columns:repeat(2, 1fr); gap:10px; padding:10px;}
     .card{padding:12px 10px 10px;}
-    .card-top{margin-bottom:6px;}
+    .card-top{
+      display:grid;
+      grid-template-columns:1fr auto;
+      grid-template-rows:auto auto;
+      column-gap:6px; row-gap:4px;
+      margin-bottom:6px;
+    }
+    .card-info{grid-column:1 / 3; grid-row:2; min-width:0;}
+    .new-badge{grid-column:1; grid-row:1; justify-self:start; font-size:0.66rem; padding:3px 8px;}
+    .wish-btn{grid-column:2; grid-row:1; justify-self:end;}
     .card-house{font-size:0.6rem;}
     .wish-btn{font-size:1.15rem;}
     .card-body{flex-direction:column; align-items:center; gap:8px; margin-bottom:8px;}
