@@ -82,8 +82,6 @@
   .li-name{font-size:1.25rem; margin:4px 0 8px;}
   .li-notes{font-size:0.78rem; color:var(--parchment-dim); margin-bottom:16px;}
   .li-controls{display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-bottom:14px;}
-  .li-remove{background:none; border:none; color:var(--parchment-dim); font-size:0.72rem; text-decoration:underline; text-underline-offset:3px; padding:0;}
-  .li-remove:hover{color:#B23B2E;}
   .li-wishlist{background:none; border:none; color:var(--parchment-dim); font-size:0.72rem; padding:0; text-decoration:underline; text-underline-offset:3px;}
   .li-wishlist:hover{color:var(--amber-bright);}
   .li-wishlist.active{color:var(--amber-bright); text-decoration:none;}
@@ -394,7 +392,6 @@ function render(){
           <div class="li-notes">${f.notes.top} · ${f.notes.heart} · ${f.notes.base}</div>
           <div class="li-controls">
             <button class="li-wishlist${leIsWishlisted(f.id) ? " active" : ""}">${leIsWishlisted(f.id) ? "♥ Saved" : "♡ Save for later"}</button>
-            <button class="li-remove">Remove all sizes</button>
           </div>
           <div class="size-table">${inCart.map(s => sizeRow(s, true)).join("")}
           </div>
@@ -467,11 +464,6 @@ function attachHandlers(){
     const addSizeBtn = row.querySelector(".li-add-size");
     if(addSizeBtn) addSizeBtn.addEventListener("click", () => {
       if(addOpen.has(id)) addOpen.delete(id); else addOpen.add(id);
-      render();
-    });
-
-    row.querySelector(".li-remove").addEventListener("click", () => {
-      leCartLines().filter(l => l.id === id).forEach(l => leRemoveFromCart(id, l.size));
       render();
     });
   });
