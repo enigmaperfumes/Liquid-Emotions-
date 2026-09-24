@@ -4,31 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Liquid Emotions — Fragrance Decants</title>
-<meta name="description" content="Shop authentic fragrance decants from Liquid Emotions — Middle Eastern, designer, and niche perfumes in 5ml, 10ml, and 20ml sizes. Try before you commit to a full bottle.">
+<meta name="description" content="Shop authentic fragrance decants from Liquid Emotions — Middle Eastern, designer, and niche perfumes in 3ml, 5ml, 10ml, 20ml, and 30ml sizes. Try before you commit to a full bottle.">
 <meta name="keywords" content="fragrance decants, perfume decants, Liquid Emotions, buy perfume samples online, niche perfumes, designer perfume decants, Middle Eastern perfumes, Indian house perfumes">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Liquid Emotions — Fragrance Decants">
-<meta property="og:description" content="Authentic fragrance decants in 5ml, 10ml, and 20ml sizes. Try premium scents before committing to a full bottle.">
+<meta property="og:description" content="Authentic fragrance decants in 3ml, 5ml, 10ml, 20ml, and 30ml sizes. Try premium scents before committing to a full bottle.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Liquid Emotions — Fragrance Decants">
-<meta name="twitter:description" content="Authentic fragrance decants in 5ml, 10ml, and 20ml sizes. Try premium scents before committing to a full bottle.">
+<meta name="twitter:description" content="Authentic fragrance decants in 3ml, 5ml, 10ml, 20ml, and 30ml sizes. Try premium scents before committing to a full bottle.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#EAF2FB;
-    --ink-deep:#071022;
-    --parchment:#0C1B33;
-    --parchment-dim:#4A5F7A;
-    --amber:#CD9F3F;
-    --amber-bright:#8B6914;
-    --brass:#C79B3E;
-    --line:rgba(12,27,51,0.16);
+    --ink:#FAF6F2;
+    --ink-deep:#2E221D;
+    --parchment:#46362F;
+    --parchment-dim:#6F5A4E;
+    --amber:#C98C7A;
+    --amber-bright:#9C5644;
+    --brass:#C98C7A;
+    --line:rgba(164,141,132,0.35);
     --moss:#FFFFFF;
-    --burgundy:#1B3A63;
-    --radius:2px;
+    --burgundy:#46362F;
+    --radius:2px; --blush:#E6CFCB; --taupe:#A48D84;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -51,6 +51,15 @@
     letter-spacing:0.02em;
   }
   a{color:inherit;}
+  /* ---------- Background: champagne gold + light rose gold (static, minimal) ---------- */
+  body::before{
+    content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+    background:
+      linear-gradient(115deg, transparent 38%, rgba(255,255,255,0.55) 50%, transparent 62%),
+      radial-gradient(1100px 720px at 0% 0%, rgba(233,212,160,0.42), transparent 62%),
+      radial-gradient(1000px 760px at 100% 100%, rgba(232,184,166,0.36), transparent 62%),
+      linear-gradient(160deg, #FBF8F0 0%, #FAF6F2 50%, #F9EEE9 100%);
+  }
   img,svg{display:block;max-width:100%;}
   button{font-family:inherit;cursor:pointer;}
   :focus-visible{
@@ -66,7 +75,7 @@
   /* ---------- Header ---------- */
   header{
     position:sticky; top:0; z-index:20;
-    background:rgba(234,242,251,0.92);
+    background:rgba(250,246,242,0.85);
     backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line);
   }
@@ -131,14 +140,14 @@
   .cart-pill:hover{background:var(--amber); color:var(--ink-deep); border-color:var(--amber);}
   .cart-count{
     background:var(--amber-bright);
-    color:var(--ink-deep);
+    color:var(--ink);
     font-family:'IBM Plex Mono', monospace;
     font-size:0.66rem;
     font-weight:600;
     padding:1px 6px;
     border-radius:100px;
   }
-  .cart-pill:hover .cart-count{background:var(--ink-deep); color:var(--amber-bright);}
+  .cart-pill:hover .cart-count{background:var(--ink-deep); color:var(--amber);}
 
   /* ---------- Hero (compact banner — full brand story lives on about.html) ---------- */
   .hero-compact{
@@ -151,7 +160,7 @@
     content:"";
     position:absolute; inset:0;
     background:
-      radial-gradient(600px 300px at 82% 10%, rgba(201,162,75,0.14), transparent 70%);
+      radial-gradient(600px 300px at 82% 10%, rgba(201,140,122,0.18), transparent 70%);
     pointer-events:none;
   }
   .hero-compact-inner{
@@ -188,7 +197,7 @@
     text-decoration:none;
     font-weight:600;
   }
-  .btn-primary:hover{background:var(--amber-bright); border-color:var(--amber-bright);}
+  .btn-primary:hover{background:var(--amber-bright); border-color:var(--amber-bright); color:var(--ink);}
   .btn-ghost{
     padding:13px 22px;
     font-size:0.88rem;
@@ -197,7 +206,7 @@
     border:1px solid var(--line);
     color:var(--parchment-dim);
   }
-  .btn-ghost:hover{border-color:var(--parchment-dim); color:var(--parchment);}
+  .btn-ghost:hover{border-color:var(--taupe); color:var(--parchment);}
 
   /* ---------- Section shared ---------- */
   section{padding:76px 28px;}
@@ -247,7 +256,7 @@
     border-radius:var(--radius);
     appearance:none;
     -webkit-appearance:none;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M3 5.5L7 9.5L11 5.5' stroke='%23E0A85C' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M3 5.5L7 9.5L11 5.5' stroke='%23C98C7A' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     background-repeat:no-repeat;
     background-position:right 14px center;
     cursor:pointer;
@@ -315,6 +324,35 @@
     padding:40px 0;
   }
 
+  /* ---------- Search suggestions (as you type) ---------- */
+  .search-suggest{
+    position:absolute; left:0; right:0; top:calc(100% + 4px); z-index:30;
+    margin:0; padding:4px 0; list-style:none;
+    background:var(--moss);
+    border:1px solid var(--brass);
+    border-radius:var(--radius);
+    box-shadow:0 10px 24px rgba(70,54,47,0.16);
+    max-height:min(360px, 60vh); overflow-y:auto;
+  }
+  .search-suggest[hidden]{display:none;}
+  .suggest-item{
+    display:flex; align-items:baseline; justify-content:space-between; gap:14px;
+    padding:10px 16px; cursor:pointer;
+    font-size:0.92rem; color:var(--parchment);
+  }
+  .suggest-item.active{background:var(--blush);}
+  .suggest-main{min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .suggest-sub{color:var(--parchment-dim); font-size:0.82rem; margin-left:10px;}
+  .suggest-type{flex-shrink:0; font-size:0.68rem; color:var(--parchment-dim);}
+  .suggest-item mark{
+    background:rgba(201,140,122,0.3); color:inherit; font-weight:600;
+    border-radius:2px; padding:0 1px;
+  }
+  .sr-only{
+    position:absolute; width:1px; height:1px; margin:-1px; padding:0;
+    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
+
   /* ---------- Brand accordion (each brand is its own collapsible row) ---------- */
   .brand-accordion{
     display:flex; flex-direction:column; gap:6px;
@@ -332,7 +370,7 @@
     display:flex; align-items:center; justify-content:space-between;
     gap:12px;
     background:var(--burgundy);
-    color:#fff;
+    color:var(--ink);
     border:none;
     padding:10px 16px;
     font-family:'Fraunces', serif;
@@ -344,7 +382,7 @@
     transition:background .15s ease;
   }
   .brand-acc-header:hover{background:var(--ink-deep);}
-  .brand-acc-item.open .brand-acc-header{background:var(--amber-bright); color:var(--ink-deep);}
+  .brand-acc-item.open .brand-acc-header{background:var(--amber-bright); color:var(--ink);}
   .brand-acc-name{display:flex; align-items:baseline; gap:10px; min-width:0;}
   .brand-acc-count{
     font-family:'IBM Plex Mono', monospace;
@@ -458,14 +496,14 @@
   .notes div{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
   .notes b{color:var(--parchment); font-weight:500;}
 
-  .card-dupe{font-size:0.92rem; color:#96701C; margin-top:3px; height:21px; line-height:21px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+  .card-dupe{font-size:0.92rem; color:#9C5644; margin-top:3px; height:21px; line-height:21px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
 
   .new-badge{
     flex-shrink:0;
     display:inline-flex; align-items:center; gap:4px;
     font-family:'IBM Plex Mono', monospace;
     font-size:0.78rem; font-weight:600; letter-spacing:0.06em;
-    color:var(--ink-deep);
+    color:var(--ink);
     background:var(--amber-bright);
     padding:5px 11px;
     border-radius:100px;
@@ -647,7 +685,7 @@
     width:56px; height:56px; border-radius:50%;
     background:#25D366; color:#fff;
     display:flex; align-items:center; justify-content:center;
-    box-shadow:0 4px 14px rgba(12,27,51,0.3);
+    box-shadow:0 4px 14px rgba(70,54,47,0.3);
     text-decoration:none;
     transition:transform .15s ease;
   }
@@ -723,8 +761,10 @@
           <circle cx="7" cy="7" r="5.2" stroke="currentColor" stroke-width="1.4"/>
           <path d="M11 11L14.5 14.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
         </svg>
-        <input type="text" id="searchInput" placeholder="Search by name, brand, note, or inspiration — e.g. lavender, Afnan, YSL Y..." autocomplete="off">
+        <input type="text" id="searchInput" placeholder="Search by name, brand, note, or inspiration — e.g. lavender, Afnan, YSL Y..." autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="searchSuggest">
         <button class="search-clear" id="searchClear" aria-label="Clear search" style="display:none;">×</button>
+        <ul class="search-suggest" id="searchSuggest" role="listbox" aria-label="Search suggestions" hidden></ul>
+        <span class="sr-only" id="searchStatus" role="status" aria-live="polite"></span>
       </div>
       <div class="sort-new-row">
         <button class="pill-tab new-filter-toggle" id="newFilterToggle" type="button">✨ New</button>
@@ -835,7 +875,7 @@
 
 <script src="store.js"></script>
 <script>
-const FILL_LEVEL = { "5ml": 40, "10ml": 62, "20ml": 92 };
+const FILL_LEVEL = { "3ml": 28, "5ml": 40, "10ml": 62, "20ml": 92, "30ml": 100 };
 
 function vialSVG(id, color, fill){
   const clipId = "clip-" + id;
@@ -843,14 +883,14 @@ function vialSVG(id, color, fill){
   return `
   <svg class="vial" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M38 10 H62 V38 C62 42 66 44 72 52 C82 64 84 78 84 100 V172 C84 182 76 190 66 190 H34 C24 190 16 182 16 172 V100 C16 78 18 64 28 52 C34 44 38 42 38 38 Z"
-          stroke="#E8C778" stroke-width="3"/>
+          stroke="#C98C7A" stroke-width="3"/>
     <clipPath id="${clipId}">
       <path d="M38 10 H62 V38 C62 42 66 44 72 52 C82 64 84 78 84 100 V172 C84 182 76 190 66 190 H34 C24 190 16 182 16 172 V100 C16 78 18 64 28 52 C34 44 38 42 38 38 Z"/>
     </clipPath>
     <g clip-path="url(#${clipId})">
       <rect class="liquid-fill" x="10" y="${y}" width="84" height="200" fill="${color}"/>
     </g>
-    <rect x="34" y="2" width="32" height="8" rx="2" fill="#E8C778"/>
+    <rect x="34" y="2" width="32" height="8" rx="2" fill="#C98C7A"/>
   </svg>`;
 }
 
@@ -1013,6 +1053,14 @@ function fragranceSearchText(f){
 }
 
 let searchTerm = "";
+let pinnedId = null; // set when a specific perfume is picked from the suggestions
+
+function fragranceMatchesSearch(f){
+  if(pinnedId) return f.id === pinnedId;
+  if(searchTerm === "") return true;
+  const text = fragranceSearchText(f);
+  return searchTerm.split(/\s+/).every(t => text.includes(t));
+}
 
 /* ---------- Sort ---------- */
 const sortSelect = document.getElementById("sortSelect");
@@ -1033,7 +1081,7 @@ const openBrands = new Set();
 function renderBrandAccordion(){
   const catItems = activeCategory === "All" ? FRAGRANCES : FRAGRANCES.filter(f => leHouseCategory(f.house) === activeCategory);
   const filtered = catItems.filter(f => {
-    const matchesSearch = searchTerm === "" || fragranceSearchText(f).includes(searchTerm);
+    const matchesSearch = fragranceMatchesSearch(f);
     const matchesGender = activeGender === "All" || f.gender === activeGender;
     const matchesSeason = activeSeason === "All" || (f.season || []).includes(activeSeason);
     const matchesNew = !newFilterActive || f.isNew;
@@ -1094,18 +1142,245 @@ const searchInput = document.getElementById("searchInput");
 const searchClear = document.getElementById("searchClear");
 
 searchInput.addEventListener("input", () => {
+  pinnedId = null;
   searchTerm = searchInput.value.trim().toLowerCase();
   searchClear.style.display = searchTerm ? "block" : "none";
   renderBrandAccordion();
+  renderSuggestions();
 });
 
 searchClear.addEventListener("click", () => {
   searchInput.value = "";
   searchTerm = "";
+  pinnedId = null;
   searchClear.style.display = "none";
+  closeSuggestions();
   renderBrandAccordion();
   searchInput.focus();
 });
+
+/* ---------- Search suggestions (as you type) ---------- */
+const searchSuggest = document.getElementById("searchSuggest");
+const searchStatus = document.getElementById("searchStatus");
+const SUGGEST_LABELS = { brand:"Brand", perfume:"Perfume", inspired:"Inspired by", note:"Note", similar:"Did you mean" };
+const SUGGEST_ORDER = { brand:0, perfume:1, inspired:2, note:3 };
+const SUGGEST_MAX_TOTAL = 8;
+const SUGGEST_MAX_PER_TYPE = 5;
+let suggestItems = [];
+let suggestActive = -1;
+
+function escHTML(s){
+  return String(s).replace(/[&<>"']/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
+}
+
+function highlightMatch(text, tokens){
+  const pattern = tokens
+    .map(t => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .sort((a, b) => b.length - a.length)
+    .join("|");
+  if(!pattern) return escHTML(text);
+  return text.split(new RegExp("(" + pattern + ")", "ig"))
+    .map((part, i) => i % 2 ? `<mark>${escHTML(part)}</mark>` : escHTML(part))
+    .join("");
+}
+
+/* Same filters the catalogue uses (category, gender, season, New), minus the search text,
+   so every suggestion leads to at least one visible result. */
+function suggestPool(){
+  const catItems = activeCategory === "All" ? FRAGRANCES : FRAGRANCES.filter(f => leHouseCategory(f.house) === activeCategory);
+  return catItems.filter(f =>
+    (activeGender === "All" || f.gender === activeGender) &&
+    (activeSeason === "All" || (f.season || []).includes(activeSeason)) &&
+    (!newFilterActive || f.isNew)
+  );
+}
+
+function buildSuggestCandidates(pool){
+  const out = [];
+  const houses = new Map();
+  const inspired = new Map();
+  const notes = new Map();
+
+  pool.forEach(f => {
+    out.push({ type:"perfume", text:f.name, sub:f.house, fill:f.name, id:f.id, house:f.house,
+               hay:(f.house + " " + f.name).toLowerCase(), fz:f.name.toLowerCase() });
+    houses.set(f.house, (houses.get(f.house) || 0) + 1);
+    if(f.inspiredBy) inspired.set(f.inspiredBy, (inspired.get(f.inspiredBy) || 0) + 1);
+
+    const own = new Set();
+    [f.notes.top, f.notes.heart, f.notes.base].join(",").split(",").forEach(raw => {
+      const n = raw.trim();
+      if(n) own.add(n);
+    });
+    own.forEach(n => {
+      const k = n.toLowerCase();
+      const entry = notes.get(k);
+      if(entry) entry.count++; else notes.set(k, { text:n, count:1 });
+    });
+  });
+
+  const plural = n => `${n} perfume${n === 1 ? "" : "s"}`;
+  houses.forEach((n, h) => out.push({ type:"brand", text:h, sub:plural(n), fill:h, house:h, hay:h.toLowerCase(), fz:h.toLowerCase() }));
+  inspired.forEach((n, t) => out.push({ type:"inspired", text:t, sub:plural(n), fill:t, hay:t.toLowerCase(), fz:t.toLowerCase() }));
+  notes.forEach(e => out.push({ type:"note", text:e.text, sub:plural(e.count), fill:e.text, hay:e.text.toLowerCase(), fz:e.text.toLowerCase() }));
+  return out;
+}
+
+/* Edit distance that also counts a swapped pair of letters as one typo ("afnna" -> "afnan"). */
+function editDistance(a, b, max){
+  if(Math.abs(a.length - b.length) > max) return max + 1;
+  const d = [];
+  for(let i = 0; i <= a.length; i++) d[i] = [i];
+  for(let j = 1; j <= b.length; j++) d[0][j] = j;
+  for(let i = 1; i <= a.length; i++){
+    for(let j = 1; j <= b.length; j++){
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost);
+      if(i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]){
+        d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+      }
+    }
+  }
+  return d[a.length][b.length];
+}
+
+function computeSuggestions(term){
+  const tokens = term.split(/\s+/).filter(Boolean);
+  if(!tokens.length) return { items:[], tokens };
+  const cands = buildSuggestCandidates(suggestPool());
+  const first = tokens[0];
+
+  const rank = c => {
+    const l = c.text.toLowerCase();
+    if(l === term) return 0;
+    if(l.startsWith(term)) return 1;
+    if(l.split(/[^a-z0-9]+/).some(w => w.startsWith(first))) return 2;
+    return 3;
+  };
+  const byRelevance = (a, b) =>
+    a.rank - b.rank || SUGGEST_ORDER[a.type] - SUGGEST_ORDER[b.type] || a.text.length - b.text.length || a.text.localeCompare(b.text);
+
+  const hits = cands
+    .filter(c => tokens.every(t => c.hay.includes(t)))
+    .map(c => ({ ...c, rank:rank(c) }))
+    .sort(byRelevance);
+
+  const perType = {};
+  const items = [];
+  for(const h of hits){
+    perType[h.type] = (perType[h.type] || 0) + 1;
+    if(perType[h.type] > SUGGEST_MAX_PER_TYPE) continue;
+    items.push(h);
+    if(items.length >= SUGGEST_MAX_TOTAL) break;
+  }
+
+  /* Few or no direct matches: offer close spellings for a single typed word. */
+  if(items.length < 3 && tokens.length === 1 && first.length >= 3){
+    const max = first.length >= 6 ? 2 : 1;
+    const seen = new Set(items.map(i => i.type + "|" + i.text));
+    const fuzzy = [];
+    for(const c of cands){
+      if(seen.has(c.type + "|" + c.text)) continue;
+      let best = max + 1;
+      for(const w of c.fz.split(/[^a-z0-9]+/).filter(Boolean)){
+        best = Math.min(best, editDistance(first, w, max), editDistance(first, w.slice(0, first.length), max));
+      }
+      if(best <= max) fuzzy.push({ ...c, similar:true, rank:best });
+    }
+    fuzzy.sort(byRelevance);
+    items.push(...fuzzy.slice(0, Math.min(5, SUGGEST_MAX_TOTAL - items.length)));
+  }
+  return { items, tokens };
+}
+
+function renderSuggestions(){
+  const term = searchInput.value.trim().toLowerCase();
+  if(!term || pinnedId){ closeSuggestions(); return; }
+  const { items, tokens } = computeSuggestions(term);
+  suggestItems = items;
+  suggestActive = -1;
+  if(!items.length){ closeSuggestions(); return; }
+
+  searchSuggest.innerHTML = items.map((it, i) => `
+    <li role="option" id="suggest-${i}" class="suggest-item" data-index="${i}" aria-selected="false">
+      <span class="suggest-main">${it.similar ? escHTML(it.text) : highlightMatch(it.text, tokens)}${it.sub ? `<span class="suggest-sub">${escHTML(it.sub)}</span>` : ""}</span>
+      <span class="suggest-type mono">${it.similar ? SUGGEST_LABELS.similar : SUGGEST_LABELS[it.type]}</span>
+    </li>`).join("");
+  searchSuggest.hidden = false;
+  searchInput.setAttribute("aria-expanded", "true");
+  searchStatus.textContent = `${items.length} suggestion${items.length === 1 ? "" : "s"} available. Use up and down arrows to review.`;
+}
+
+function closeSuggestions(){
+  searchSuggest.hidden = true;
+  searchInput.setAttribute("aria-expanded", "false");
+  searchInput.removeAttribute("aria-activedescendant");
+  suggestActive = -1;
+}
+
+function setSuggestActive(i){
+  const nodes = searchSuggest.querySelectorAll(".suggest-item");
+  nodes.forEach((n, idx) => {
+    const on = idx === i;
+    n.classList.toggle("active", on);
+    n.setAttribute("aria-selected", on ? "true" : "false");
+  });
+  suggestActive = i;
+  if(i >= 0 && nodes[i]){
+    searchInput.setAttribute("aria-activedescendant", nodes[i].id);
+    nodes[i].scrollIntoView({ block:"nearest" });
+  } else {
+    searchInput.removeAttribute("aria-activedescendant");
+  }
+}
+
+function applySuggestion(item){
+  searchInput.value = item.fill;
+  searchTerm = item.fill.trim().toLowerCase();
+  pinnedId = item.type === "perfume" ? item.id : null;
+  searchClear.style.display = "block";
+
+  if(item.type === "perfume" || item.type === "brand"){
+    openBrands.add(item.house);
+  } else {
+    /* Note / inspired-by: open the matching brands when there are only a few. */
+    const houses = [...new Set(suggestPool().filter(fragranceMatchesSearch).map(f => f.house))];
+    if(houses.length <= 3) houses.forEach(h => openBrands.add(h));
+  }
+  closeSuggestions();
+  renderBrandAccordion();
+}
+
+searchInput.addEventListener("keydown", (e) => {
+  const open = !searchSuggest.hidden;
+  if(!open){
+    if(e.key === "ArrowDown" && searchInput.value.trim()){ e.preventDefault(); renderSuggestions(); }
+    return;
+  }
+  const n = suggestItems.length;
+  if(e.key === "ArrowDown"){ e.preventDefault(); setSuggestActive((suggestActive + 1) % n); }
+  else if(e.key === "ArrowUp"){ e.preventDefault(); setSuggestActive((suggestActive - 1 + n) % n); }
+  else if(e.key === "Enter"){
+    if(suggestActive >= 0){ e.preventDefault(); applySuggestion(suggestItems[suggestActive]); }
+    else closeSuggestions();
+  }
+  else if(e.key === "Escape"){ closeSuggestions(); }
+  else if(e.key === "Tab"){ closeSuggestions(); }
+});
+
+/* mousedown (not click) so the input keeps focus and the list doesn't vanish first */
+searchSuggest.addEventListener("mousedown", (e) => {
+  e.preventDefault();
+  const li = e.target.closest(".suggest-item");
+  if(li) applySuggestion(suggestItems[Number(li.dataset.index)]);
+});
+searchSuggest.addEventListener("mouseover", (e) => {
+  const li = e.target.closest(".suggest-item");
+  if(li) setSuggestActive(Number(li.dataset.index));
+});
+searchInput.addEventListener("focus", renderSuggestions);
+searchInput.addEventListener("blur", closeSuggestions);
+
 
 sortSelect.addEventListener("change", renderBrandAccordion);
 

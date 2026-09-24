@@ -1436,14 +1436,14 @@ function leCartQtyFor(id, size){
 
 const LE_QTY_THEMES = {
   dark: {
-    addBg: "#CD9F3F", addBorder: "#CD9F3F", addColor: "#071022",
-    stepBorder: "#8B6914", stepColor: "#0C1B33", countColor: "#0C1B33",
-    removeColor: "#4A5F7A", removeHover: "#B23B2E"
+    addBg: "#C98C7A", addBorder: "#C98C7A", addColor: "#2E221D",
+    stepBorder: "#9C5644", stepColor: "#46362F", countColor: "#46362F",
+    removeColor: "#6F5A4E", removeHover: "#B23B2E"
   },
   light: {
-    addBg: "#1f1f1f", addBorder: "#1f1f1f", addColor: "#fff",
-    stepBorder: "#ccc", stepColor: "#1a1a1a", countColor: "#1a1a1a",
-    removeColor: "#999", removeHover: "#c00"
+    addBg: "#46362F", addBorder: "#46362F", addColor: "#fff",
+    stepBorder: "#A48D84", stepColor: "#46362F", countColor: "#46362F",
+    removeColor: "#6F5A4E", removeHover: "#c00"
   }
 };
 
@@ -1665,9 +1665,9 @@ function leShowToast(message, durationMs){
   const toast = document.createElement("div");
   toast.textContent = message;
   Object.assign(toast.style, {
-    background: "#0C1B33", color: "#F3F6F9", padding: "10px 16px",
+    background: "#46362F", color: "#FAF6F2", padding: "10px 16px",
     borderRadius: "6px", fontSize: "14px", fontWeight: "500",
-    boxShadow: "0 4px 14px rgba(12,27,51,0.28)", border: "1px solid #8B6914",
+    boxShadow: "0 4px 14px rgba(70,54,47,0.28)", border: "1px solid #9C5644",
     opacity: "0", transform: "translateY(8px)", transition: "opacity 0.2s ease, transform 0.2s ease",
     pointerEvents: "auto", maxWidth: "280px"
   });
@@ -1693,7 +1693,7 @@ function leEnsureCartDrawer(){
   const overlay = document.createElement("div");
   overlay.id = "le-cart-drawer-overlay";
   Object.assign(overlay.style, {
-    position: "fixed", inset: "0", background: "rgba(0,0,0,0.4)",
+    position: "fixed", inset: "0", background: "rgba(70,54,47,0.45)",
     display: "none", zIndex: "9997"
   });
   overlay.addEventListener("click", leCloseCartDrawer);
@@ -1703,18 +1703,18 @@ function leEnsureCartDrawer(){
   drawer.id = "le-cart-drawer";
   Object.assign(drawer.style, {
     position: "fixed", top: "0", right: "0", height: "100%",
-    width: "min(380px, 92vw)", background: "#fff", color: "#1a1a1a",
-    boxShadow: "-6px 0 24px rgba(0,0,0,0.2)", zIndex: "9998",
+    width: "min(380px, 92vw)", background: "#fff", color: "#46362F",
+    boxShadow: "-6px 0 24px rgba(70,54,47,0.2)", zIndex: "9998",
     transform: "translateX(100%)", transition: "transform 0.25s ease",
     display: "flex", flexDirection: "column", fontFamily: "inherit"
   });
   drawer.innerHTML = `
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid #eee;">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid #E6CFCB;">
       <strong>Your Cart</strong>
       <button id="le-cart-drawer-close" style="border:none;background:none;font-size:20px;cursor:pointer;">&times;</button>
     </div>
     <div id="le-cart-drawer-lines" style="flex:1;overflow-y:auto;padding:12px 16px;"></div>
-    <div id="le-cart-drawer-footer" style="padding:16px;border-top:1px solid #eee;"></div>
+    <div id="le-cart-drawer-footer" style="padding:16px;border-top:1px solid #E6CFCB;"></div>
   `;
   document.body.appendChild(drawer);
   drawer.querySelector("#le-cart-drawer-close").addEventListener("click", leCloseCartDrawer);
@@ -1729,23 +1729,23 @@ function leRenderCartDrawer(){
   const invalid = leGetInvalidCartItems();
 
   if(!lines.length){
-    linesEl.innerHTML = `<p style="color:#888;text-align:center;margin-top:40px;">Your cart is empty.</p>`;
+    linesEl.innerHTML = `<p style="color:#6F5A4E;text-align:center;margin-top:40px;">Your cart is empty.</p>`;
     footerEl.innerHTML = "";
     return;
   }
 
   linesEl.innerHTML = lines.map(line => `
-    <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f2f2f2;">
+    <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #F1E4E0;">
       ${line.fragrance.image
         ? `<img src="${line.fragrance.image}" alt="${line.fragrance.name}" style="width:56px;height:80px;object-fit:contain;border-radius:6px;flex-shrink:0;">`
         : `<div style="width:56px;height:56px;border-radius:6px;background:${line.fragrance.color};flex-shrink:0;"></div>`}
       <div style="flex:1;min-width:0;">
         <div style="font-weight:600;font-size:14px;">${line.fragrance.name}</div>
-        <div style="font-size:12px;color:#888;">${line.size} · ${leFormatPrice(line.unitPrice)}</div>
+        <div style="font-size:12px;color:#6F5A4E;">${line.size} · ${leFormatPrice(line.unitPrice)}</div>
         <div style="display:flex;align-items:center;gap:6px;margin-top:6px;">
-          <button data-le-qty-dec data-id="${line.id}" data-size="${line.size}" style="width:28px;height:28px;border:1px solid #ccc;background:transparent;color:#1a1a1a;border-radius:4px;cursor:pointer;line-height:1;">−</button>
+          <button data-le-qty-dec data-id="${line.id}" data-size="${line.size}" style="width:28px;height:28px;border:1px solid #A48D84;background:transparent;color:#46362F;border-radius:4px;cursor:pointer;line-height:1;">−</button>
           <span style="min-width:16px;text-align:center;">${line.qty}</span>
-          <button data-le-qty-inc data-id="${line.id}" data-size="${line.size}" style="width:28px;height:28px;border:1px solid #ccc;background:transparent;color:#1a1a1a;border-radius:4px;cursor:pointer;line-height:1;">+</button>
+          <button data-le-qty-inc data-id="${line.id}" data-size="${line.size}" style="width:28px;height:28px;border:1px solid #A48D84;background:transparent;color:#46362F;border-radius:4px;cursor:pointer;line-height:1;">+</button>
           <button data-le-remove data-id="${line.id}" data-size="${line.size}" style="margin-left:auto;border:none;background:none;color:#c00;cursor:pointer;font-size:12px;padding:6px 0;">Remove</button>
         </div>
       </div>
@@ -1758,7 +1758,7 @@ function leRenderCartDrawer(){
     <div style="display:flex;justify-content:space-between;font-weight:600;margin-bottom:12px;">
       <span>Subtotal</span><span>${leFormatPrice(total)}</span>
     </div>
-    <a href="checkout.html" style="display:block;text-align:center;background:#1f1f1f;color:#fff;padding:12px;border-radius:6px;text-decoration:none;">Checkout</a>
+    <a href="checkout.html" style="display:block;text-align:center;background:#46362F;color:#fff;padding:12px;border-radius:6px;text-decoration:none;">Checkout</a>
   `;
 
   linesEl.querySelectorAll("[data-le-qty-inc]").forEach(btn =>
@@ -1818,7 +1818,7 @@ function leEnsureProductModal(){
   const overlay = document.createElement("div");
   overlay.id = "le-product-modal-overlay";
   Object.assign(overlay.style, {
-    position: "fixed", inset: "0", background: "rgba(0,0,0,0.5)",
+    position: "fixed", inset: "0", background: "rgba(70,54,47,0.55)",
     display: "none", zIndex: "9995", alignItems: "center", justifyContent: "center", padding: "20px"
   });
   overlay.addEventListener("click", e => { if(e.target === overlay) leCloseProductModal(); });
@@ -1826,7 +1826,7 @@ function leEnsureProductModal(){
   modal = document.createElement("div");
   modal.id = "le-product-modal";
   Object.assign(modal.style, {
-    background: "#fff", color: "#1a1a1a", borderRadius: "10px", maxWidth: "640px", width: "100%",
+    background: "#fff", color: "#46362F", borderRadius: "10px", maxWidth: "640px", width: "100%",
     maxHeight: "88vh", overflowY: "auto", padding: "24px", position: "relative"
   });
   overlay.appendChild(modal);
@@ -1837,7 +1837,7 @@ function leEnsureProductModal(){
 function leNoteRow(label, notes){
   return `
     <div style="margin-bottom:10px;">
-      <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#999;margin-bottom:3px;">${label}</div>
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#6F5A4E;margin-bottom:3px;">${label}</div>
       <div style="font-size:14px;">${notes}</div>
     </div>
   `;
@@ -1858,28 +1858,28 @@ function leOpenProductModal(id){
     <button id="le-modal-close" style="position:absolute;top:14px;right:14px;border:none;background:none;font-size:22px;cursor:pointer;">&times;</button>
     <div style="display:flex;gap:20px;flex-wrap:wrap;">
       ${f.image
-        ? `<img src="${f.image}" alt="${f.name}" style="width:160px;height:195px;object-fit:contain;border-radius:10px;border:1px solid rgba(0,0,0,0.12);flex-shrink:0;">`
-        : `<div style="width:160px;height:160px;border-radius:10px;background:${f.color};border:1px solid rgba(0,0,0,0.12);flex-shrink:0;"></div>`}
+        ? `<img src="${f.image}" alt="${f.name}" style="width:160px;height:195px;object-fit:contain;border-radius:10px;border:1px solid rgba(70,54,47,0.15);flex-shrink:0;">`
+        : `<div style="width:160px;height:160px;border-radius:10px;background:${f.color};border:1px solid rgba(70,54,47,0.15);flex-shrink:0;"></div>`}
       <div style="flex:1;min-width:200px;">
-        <div style="font-size:12px;color:#888;">${f.house}</div>
+        <div style="font-size:12px;color:#6F5A4E;">${f.house}</div>
         <h2 style="margin:2px 0 4px;">${f.name}</h2>
         
         <!-- Fixed alignment gap discrepancy layout line -->
-        <div style="font-size:12px;color:#a07a2e;margin-bottom:6px;visibility:${f.inspiredBy ? 'visible' : 'hidden'};height:18px;line-height:18px;">
+        <div style="font-size:12px;color:#9C5644;margin-bottom:6px;visibility:${f.inspiredBy ? 'visible' : 'hidden'};height:18px;line-height:18px;">
           ${f.inspiredBy ? `≈ ${f.inspiredBy}` : '&nbsp;'}
         </div>
 
-        <div style="font-size:12px;color:#888;margin-bottom:10px;">${f.gender} · ${f.season.join(", ")}</div>
+        <div style="font-size:12px;color:#6F5A4E;margin-bottom:10px;">${f.gender} · ${f.season.join(", ")}</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          <button id="le-modal-wishlist" style="border:1px solid #ccc;background:${wishlisted ? "#ffe6ea" : "#fff"};padding:8px 12px;border-radius:6px;cursor:pointer;">
+          <button id="le-modal-wishlist" style="border:1px solid #A48D84;background:${wishlisted ? "#E6CFCB" : "#fff"};padding:8px 12px;border-radius:6px;cursor:pointer;">
             ${wishlisted ? "♥ In wishlist" : "♡ Add to wishlist"}
           </button>
-          ${f.fragranticaUrl ? `<a href="${f.fragranticaUrl}" target="_blank" rel="noopener" style="border:1px solid #ccc;padding:8px 12px;border-radius:6px;font-size:13px;text-decoration:none;color:#1a1a1a;">Fragrantica ↗</a>` : ""}
+          ${f.fragranticaUrl ? `<a href="${f.fragranticaUrl}" target="_blank" rel="noopener" style="border:1px solid #A48D84;padding:8px 12px;border-radius:6px;font-size:13px;text-decoration:none;color:#46362F;">Fragrantica ↗</a>` : ""}
         </div>
       </div>
     </div>
 
-    <div style="margin-top:20px;padding:16px;background:#faf9f7;border-radius:8px;">
+    <div style="margin-top:20px;padding:16px;background:#FAF6F2;border-radius:8px;">
       <div style="font-weight:600;font-size:13px;margin-bottom:12px;">Note Pyramid</div>
       ${leNoteRow("Top", f.notes.top)}
       ${leNoteRow("Heart", f.notes.heart)}
@@ -1888,9 +1888,9 @@ function leOpenProductModal(id){
 
     <div style="margin-top:20px;">
       <div style="font-weight:600;font-size:13px;margin-bottom:8px;">Sizes &amp; prices</div>
-      <div style="border:1px solid #e5e5e5;border-radius:8px;overflow:hidden;">
+      <div style="border:1px solid #E6CFCB;border-radius:8px;overflow:hidden;">
         ${sizeKeys.map((sz, i) => `
-          <div style="display:flex;justify-content:space-between;align-items:center;width:100%;padding:12px 16px;${i > 0 ? "border-top:1px solid #e5e5e5;" : ""}font-size:14px;color:#1a1a1a;">
+          <div style="display:flex;justify-content:space-between;align-items:center;width:100%;padding:12px 16px;${i > 0 ? "border-top:1px solid #E6CFCB;" : ""}font-size:14px;color:#46362F;">
             <span style="display:flex;gap:10px;align-items:center;">
               <span>${sz}</span>
               <span style="font-weight:600;">${leFormatPrice(f.prices[sz])}</span>

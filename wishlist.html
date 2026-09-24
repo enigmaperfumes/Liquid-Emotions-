@@ -9,9 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#EAF2FB; --ink-deep:#071022; --parchment:#0C1B33; --parchment-dim:#4A5F7A;
-    --amber:#CD9F3F; --amber-bright:#8B6914; --brass:#C79B3E; --line:rgba(12,27,51,0.16);
-    --moss:#FFFFFF; --burgundy:#1B3A63; --radius:2px;
+    --ink:#FAF6F2; --ink-deep:#2E221D; --parchment:#46362F; --parchment-dim:#6F5A4E;
+    --amber:#C98C7A; --amber-bright:#9C5644; --brass:#C98C7A; --line:rgba(164,141,132,0.35);
+    --moss:#FFFFFF; --burgundy:#46362F; --radius:2px; --blush:#E6CFCB; --taupe:#A48D84;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -19,12 +19,21 @@
   h1,h2,h3,.display{font-family:'Fraunces', serif; font-weight:600; letter-spacing:-0.01em;}
   .mono{font-family:'IBM Plex Mono', monospace; letter-spacing:0.02em;}
   a{color:inherit;}
+  /* ---------- Background: champagne gold + light rose gold (static, minimal) ---------- */
+  body::before{
+    content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+    background:
+      linear-gradient(115deg, transparent 38%, rgba(255,255,255,0.55) 50%, transparent 62%),
+      radial-gradient(1100px 720px at 0% 0%, rgba(233,212,160,0.42), transparent 62%),
+      radial-gradient(1000px 760px at 100% 100%, rgba(232,184,166,0.36), transparent 62%),
+      linear-gradient(160deg, #FBF8F0 0%, #FAF6F2 50%, #F9EEE9 100%);
+  }
   img,svg{display:block;max-width:100%;}
   button, input{font-family:inherit;}
   button{cursor:pointer;}
   :focus-visible{outline:2px solid var(--amber-bright); outline-offset:3px;}
   .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
-  header{position:sticky; top:0; z-index:20; background:rgba(234,242,251,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+  header{position:sticky; top:0; z-index:20; background:rgba(250,246,242,0.85); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
   .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 28px;}
   .wordmark{font-size:1.15rem; display:flex; align-items:baseline; gap:8px; text-decoration:none;}
   .wordmark .mono{font-size:0.62rem; color:var(--amber-bright); letter-spacing:0.14em;}
@@ -53,9 +62,9 @@
   .mobile-menu a:last-child{border-bottom:none;}
   .mobile-menu a:hover{color:var(--amber-bright);}
   .cart-pill:hover{background:var(--amber); color:var(--ink-deep); border-color:var(--amber);}
-  .cart-pill.active{background:rgba(139,105,20,0.1);}
-  .cart-count{background:var(--amber-bright); color:var(--ink-deep); font-family:'IBM Plex Mono', monospace; font-size:0.66rem; font-weight:600; padding:1px 6px; border-radius:100px;}
-  .cart-pill:hover .cart-count{background:var(--ink-deep); color:var(--amber-bright);}
+  .cart-pill.active{background:rgba(156,86,68,0.1);}
+  .cart-count{background:var(--amber-bright); color:var(--ink); font-family:'IBM Plex Mono', monospace; font-size:0.66rem; font-weight:600; padding:1px 6px; border-radius:100px;}
+  .cart-pill:hover .cart-count{background:var(--ink-deep); color:var(--amber);}
   .page-head{padding:56px 28px 36px; border-bottom:1px solid var(--line);}
   .breadcrumb{font-size:0.7rem; color:var(--parchment-dim); margin-bottom:18px;}
   .breadcrumb a{text-decoration:none; color:var(--parchment-dim);}
@@ -90,7 +99,7 @@
   .summary h2{font-size:1.15rem; margin:0 0 22px;}
   .summary-row{display:flex; justify-content:space-between; font-size:0.88rem; color:var(--parchment-dim); padding:10px 0;}
   .btn-primary{display:block; width:100%; text-align:center; background:var(--amber); color:var(--ink-deep); border:1px solid var(--amber); padding:15px 22px; font-size:0.9rem; border-radius:var(--radius); text-decoration:none; font-weight:600; margin-top:10px; cursor:pointer;}
-  .btn-primary:hover{background:var(--amber-bright); border-color:var(--amber-bright);}
+  .btn-primary:hover{background:var(--amber-bright); border-color:var(--amber-bright); color:var(--ink);}
   .btn-primary:disabled{opacity:0.4; pointer-events:none;}
   .btn-secondary{display:block; width:100%; text-align:center; background:transparent; color:var(--parchment-dim); border:1px solid var(--line); padding:12px 22px; font-size:0.82rem; border-radius:var(--radius); margin-top:10px; cursor:pointer;}
   .btn-secondary:hover{border-color:#B23B2E; color:#B23B2E;}
@@ -117,7 +126,7 @@
     width:56px; height:56px; border-radius:50%;
     background:#25D366; color:#fff;
     display:flex; align-items:center; justify-content:center;
-    box-shadow:0 4px 14px rgba(12,27,51,0.3);
+    box-shadow:0 4px 14px rgba(70,54,47,0.3);
     text-decoration:none;
     transition:transform .15s ease;
   }
@@ -210,7 +219,7 @@
 
 <script src="store.js"></script>
 <script>
-const FILL_LEVEL = { "5ml": 40, "10ml": 62, "20ml": 92 };
+const FILL_LEVEL = { "3ml": 28, "5ml": 40, "10ml": 62, "20ml": 92, "30ml": 100 };
 
 function vialSVG(id, color, size){
   const fill = FILL_LEVEL[size] || FILL_LEVEL["10ml"];
@@ -219,14 +228,14 @@ function vialSVG(id, color, size){
   return `
   <svg class="vial" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M38 10 H62 V38 C62 42 66 44 72 52 C82 64 84 78 84 100 V172 C84 182 76 190 66 190 H34 C24 190 16 182 16 172 V100 C16 78 18 64 28 52 C34 44 38 42 38 38 Z"
-          stroke="#E8C778" stroke-width="3"/>
+          stroke="#C98C7A" stroke-width="3"/>
     <clipPath id="${clipId}">
       <path d="M38 10 H62 V38 C62 42 66 44 72 52 C82 64 84 78 84 100 V172 C84 182 76 190 66 190 H34 C24 190 16 182 16 172 V100 C16 78 18 64 28 52 C34 44 38 42 38 38 Z"/>
     </clipPath>
     <g clip-path="url(#${clipId})">
       <rect class="liquid-fill" x="10" y="${y}" width="84" height="200" fill="${color}"/>
     </g>
-    <rect x="34" y="2" width="32" height="8" rx="2" fill="#E8C778"/>
+    <rect x="34" y="2" width="32" height="8" rx="2" fill="#C98C7A"/>
   </svg>`;
 }
 
